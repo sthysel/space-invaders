@@ -1,4 +1,4 @@
-package thyscom.gameplay;
+package thyscom.spaceinvaders;
 
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
@@ -24,7 +24,7 @@ import org.apache.log4j.Logger;
  */
 public class SpriteStore {
 
-    private static final Logger logger = Logger.getLogger(SpriteStore.class); 
+    private static final Logger logger = Logger.getLogger(SpriteStore.class);
     /** The single instance of this class */
     private static SpriteStore single = new SpriteStore();
 
