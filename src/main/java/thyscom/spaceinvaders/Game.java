@@ -48,7 +48,7 @@ public class Game extends Canvas {
     /** The time at which last fired a shot */
     private long lastFire = 0;
     /** The interval between our players shot (ms) */
-    private long firingInterval = 500;
+    private long firingInterval = 50;
     /** The number of aliens left on the screen */
     private int alienCount;
     /** The message to display which waiting for a key press */
