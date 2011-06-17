@@ -2,6 +2,7 @@ package thyscom.spaceinvaders;
 
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.Transparency;
 import java.awt.image.BufferedImage;
@@ -27,6 +28,8 @@ public class SpriteStore {
     private static final Logger logger = Logger.getLogger(SpriteStore.class);
     /** The single instance of this class */
     private static SpriteStore single = new SpriteStore();
+    /** The cached sprite map, from reference to sprite instance */
+    private HashMap<String, Sprite> sprites = new HashMap<String, Sprite>();
 
     /**
      * Get the single instance of this class 
@@ -36,8 +39,6 @@ public class SpriteStore {
     public static SpriteStore get() {
         return single;
     }
-    /** The cached sprite map, from reference to sprite instance */
-    private HashMap sprites = new HashMap();
 
     /**
      * Retrieve a sprite from the store
@@ -48,12 +49,14 @@ public class SpriteStore {
     public Sprite getSprite(String ref) {
         // if we've already got the sprite in the cache
         // then just return the existing version
-        if (sprites.get(ref) != null) {
-            return (Sprite) sprites.get(ref);
+        if (!sprites.containsKey(ref)) {
+            makeNewSprite(ref);
         }
+        return sprites.get(ref);
+    }
 
-        // otherwise, go away and grab the sprite from the resource
-        // loader
+    private void makeNewSprite(String ref) throws HeadlessException {
+        // get the sprite from the resource loader
         BufferedImage sourceImage = null;
 
         try {
@@ -83,8 +86,6 @@ public class SpriteStore {
         // create a sprite, add it the cache then return it
         Sprite sprite = new Sprite(image);
         sprites.put(ref, sprite);
-
-        return sprite;
     }
 
     /**
