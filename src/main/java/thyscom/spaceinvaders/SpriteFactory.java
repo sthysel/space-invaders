@@ -55,7 +55,7 @@ public class SpriteFactory {
     }
 
     private Image loadImageFromDisk(URL url) throws IOException {
-        BufferedImage sourceImage = sourceImage = ImageIO.read(url);
+        BufferedImage sourceImage = ImageIO.read(url);
         // create an accelerated image of the right size to store our sprite in
         Image image = getGraphicsConfiguration().createCompatibleImage(sourceImage.getWidth(), sourceImage.getHeight(), Transparency.BITMASK);
         // draw our source image into the accelerated image
