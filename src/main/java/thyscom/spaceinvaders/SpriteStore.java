@@ -6,6 +6,7 @@ import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.Transparency;
 import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
@@ -106,6 +107,7 @@ public class SpriteStore {
         GraphicsConfiguration gc = getGraphicsConfiguration();
         BufferedImage image = gc.createCompatibleImage(WIDTH, HEIGHT, Transparency.BITMASK);
         Graphics2D g2d = image.createGraphics();
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setColor(Color.GREEN);
         g2d.fill(new Ellipse2D.Double(0, 0, WIDTH, WIDTH));
         g2d.dispose();
