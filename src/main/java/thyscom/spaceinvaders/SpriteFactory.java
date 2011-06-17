@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
 import org.apache.log4j.Logger;
 
 /**
- * Manufactures sprites on demand
+ * Manufactures sprites on demand, typically the store orders them.
  * @author thys
  */
 public class SpriteFactory {
@@ -24,7 +24,8 @@ public class SpriteFactory {
     private static final Logger logger = Logger.getLogger(SpriteStore.class);
 
     /**
-     * Get a new sprite.
+     * Get a new sprite given the resource reference. If the resource does not exist
+     * a sprite is made up on the spot and returned.
      * @param ref
      * @throws HeadlessException 
      */
