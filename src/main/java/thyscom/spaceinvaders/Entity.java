@@ -41,7 +41,7 @@ public abstract class Entity {
      * @param y The initial y location of this entity
      */
     public Entity(String ref, int x, int y) {
-        this.sprite = SpriteStore.get().getSprite(ref);
+        this.sprite = SpriteStore.getInstance().getSprite(ref);
         this.x = x;
         this.y = y;
     }
