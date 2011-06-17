@@ -81,6 +81,7 @@ public class SpriteStore {
                 image = makeSubstituteImage();
             }
         } catch (IOException e) {
+            logger.error(e);
             image = makeSubstituteImage();
         }
 
@@ -92,36 +93,26 @@ public class SpriteStore {
     private Image loadImageFromDisk(URL url) throws IOException {
         BufferedImage sourceImage = sourceImage = ImageIO.read(url);
         // create an accelerated image of the right size to store our sprite in
-        GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
-        Image image = gc.createCompatibleImage(sourceImage.getWidth(), sourceImage.getHeight(), Transparency.BITMASK);
+        Image image = getGraphicsConfiguration().createCompatibleImage(sourceImage.getWidth(), sourceImage.getHeight(), Transparency.BITMASK);
         // draw our source image into the accelerated image
         image.getGraphics().drawImage(sourceImage, 0, 0, null);
 
         return image;
     }
 
-    /**
-     * Utility method to handle resource loading failure
-     * 
-     * @param message The message to display on failure
-     */
-    private void fail(String message) {
-        // we're pretty dramatic here, if a resource isn't available
-        // we dump the message and exit the game
-        logger.error(message);
-        System.exit(0);
-    }
-
     private Image makeSubstituteImage() {
         int WIDTH = 20;
         int HEIGHT = 20;
-        // create an accelerated image of the right size to store our sprite in
-        GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
+        GraphicsConfiguration gc = getGraphicsConfiguration();
         BufferedImage image = gc.createCompatibleImage(WIDTH, HEIGHT, Transparency.BITMASK);
         Graphics2D g2d = image.createGraphics();
         g2d.setColor(Color.GREEN);
         g2d.fill(new Ellipse2D.Double(0, 0, WIDTH, WIDTH));
         g2d.dispose();
         return image;
+    }
+
+    private GraphicsConfiguration getGraphicsConfiguration() throws HeadlessException {
+        return GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
     }
 }
