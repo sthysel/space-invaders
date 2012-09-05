@@ -30,7 +30,7 @@ public class SpriteFactory {
      * @throws HeadlessException 
      */
     public Sprite getSprite(String ref) {
-        Image image = null;
+        Image image;
         try {
             // The ClassLoader.getResource() ensures we get the sprite
             // from the appropriate place, this helps with deploying the game
