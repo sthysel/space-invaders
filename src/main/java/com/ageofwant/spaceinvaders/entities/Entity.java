@@ -1,9 +1,9 @@
 package com.ageofwant.spaceinvaders.entities;
 
-import java.awt.Graphics;
-import java.awt.Rectangle;
 import com.ageofwant.spaceinvaders.Sprite;
 import com.ageofwant.spaceinvaders.SpriteStore;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  * An entity represents any element that appears in the game. The
@@ -49,10 +49,10 @@ public abstract class Entity {
     }
 
     /**
-     * Request that this entity move itself based on a certain ammount
+     * Request that this entity move itself based on a certain amount
      * of time passing.
      * 
-     * @param delta The ammount of time that has passed in milliseconds
+     * @param delta The amount of time that has passed in milliseconds
      */
     public void move(long delta) {
         // update the location of the entity based on move speeds
@@ -131,7 +131,7 @@ public abstract class Entity {
     }
 
     /**
-     * Check if this entity collised with another.
+     * Check if this entity collided with another.
      * 
      * @param other The other entity to check collision against
      * @return True if the entities collide with each other

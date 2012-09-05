@@ -1,8 +1,8 @@
 package com.ageofwant.spaceinvaders;
 
+import com.ageofwant.spaceinvaders.entities.AlienEntity;
 import com.ageofwant.spaceinvaders.entities.Entity;
 import com.ageofwant.spaceinvaders.entities.ShipEntity;
-import com.ageofwant.spaceinvaders.entities.AlienEntity;
 import com.ageofwant.spaceinvaders.entities.ShotEntity;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -14,7 +14,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -194,7 +193,7 @@ public class Game extends Canvas {
      * Notification that the player has died. 
      */
     public void notifyDeath() {
-        message = "Oh no! They got you, try again?";
+        message = "Oh no! They got you, try again ?";
         waitingForKeyPress = true;
     }
 
@@ -369,7 +368,7 @@ public class Game extends Canvas {
      * 
      * This has been implemented as an inner class more through 
      * habit then anything else. Its perfectly normal to implement
-     * this as separate class if slight less convinient.
+     * this as separate class if slight less convenient.
      * 
      * @author Kevin Glass
      */

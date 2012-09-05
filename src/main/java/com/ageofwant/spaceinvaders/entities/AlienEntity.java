@@ -9,7 +9,7 @@ import com.ageofwant.spaceinvaders.Game;
  */
 public class AlienEntity extends Entity {
 
-    /** The speed at which the alient moves horizontally */
+    /** The speed at which the alien moves horizontally */
     private double moveSpeed = 75;
     /** The game in which the entity exists */
     private Game game;
