@@ -1,7 +1,9 @@
-package thyscom.spaceinvaders;
+package com.ageofwant.spaceinvaders.entities;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import com.ageofwant.spaceinvaders.Sprite;
+import com.ageofwant.spaceinvaders.SpriteStore;
 
 /**
  * An entity represents any element that appears in the game. The

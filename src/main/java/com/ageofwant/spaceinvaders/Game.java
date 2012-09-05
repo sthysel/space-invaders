@@ -1,5 +1,9 @@
-package thyscom.spaceinvaders;
+package com.ageofwant.spaceinvaders;
 
+import com.ageofwant.spaceinvaders.entities.Entity;
+import com.ageofwant.spaceinvaders.entities.ShipEntity;
+import com.ageofwant.spaceinvaders.entities.AlienEntity;
+import com.ageofwant.spaceinvaders.entities.ShotEntity;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;

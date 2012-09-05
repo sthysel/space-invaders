@@ -1,4 +1,4 @@
-package thyscom.spaceinvaders;
+package com.ageofwant.spaceinvaders;
 
 import java.util.HashMap;
 import org.apache.log4j.Logger;

@@ -1,4 +1,4 @@
-package thyscom.spaceinvaders;
+package com.ageofwant.spaceinvaders;
 
 import java.awt.Graphics;
 import java.awt.Image;

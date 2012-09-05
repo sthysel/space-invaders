@@ -1,4 +1,4 @@
-package thyscom.gameplay;
+package com.ageofwant.spaceinvaders;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

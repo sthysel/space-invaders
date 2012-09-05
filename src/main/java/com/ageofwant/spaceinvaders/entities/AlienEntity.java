@@ -1,4 +1,6 @@
-package thyscom.spaceinvaders;
+package com.ageofwant.spaceinvaders.entities;
+
+import com.ageofwant.spaceinvaders.Game;
 
 /**
  * An entity which represents one of our space invader aliens.

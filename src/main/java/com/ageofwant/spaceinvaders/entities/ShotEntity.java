@@ -1,4 +1,6 @@
-package thyscom.spaceinvaders;
+package com.ageofwant.spaceinvaders.entities;
+
+import com.ageofwant.spaceinvaders.Game;
 
 /**
  * An entity representing a shot fired by the player's ship
